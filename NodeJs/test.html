@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./node_modules/underscore/underscore.js"></script>
+    <script>
+    var ironman = {
+        name: "Tony Stark",
+        alias: "Iron Man"
+    };
+    var avengers_array = [
+        {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+        {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+        {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+        {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+        {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+        {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+    ];
+    // console.log(_.each(ironman, function(value,key){alert(key+': '+value);}));
+    var avengersAssemble = _.map(avengers_array, function(avenger){
+        return avenger;
+    });
+    </script>
+    <title>Underscore Test</title>
+</head>
+<body>
+    
+</body>
+</html>
