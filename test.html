@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./NodeJs/node_modules/underscore/underscore.js"></script>
+    <script>
+    var ironman = {
+        name: "Tony Stark",
+        alias: "Iron Man"
+    };
+    var avengers_array = [
+        {name: "Tony Stark", alias: "Iron Man", ability: "flight"},
+        {name: "Bruce Banner", alias: "The Incredible Hulk", ability: "superhuman strength"},
+        {name: "Steve Rogers", alias: "Captain America", ability: "superhuman strength"},
+        {name: "Clint Barton", alias: "Hawkeye", ability: "superior hand-eye coordination"},
+        {name: "Thor Odinson", alias: "Thor", ability: "teleportation"},
+        {name: "Natasha Romanova", alias: "Black Widow", ability: "espionage"}
+    ];
+    // console.log(_.each(ironman, function(value,key){alert(key+': '+value);}));
+    var avengersAssemble = _.map(avengers_array, function(avenger){
+        return avenger;
+    });
+    var avengerNames = _.pluck(avengers_array, 'name');
+    var superhumanStrengthAvengersArray = _.where(avengers_array, {ability: "superhuman strength"});
+    var superhumanStrengthAvenger = _.findWhere(avengers_array, {ability: "superhuman strength"});
+    var superhumanStrengthAvengers = _.filter(avengers_array, function(avenger){
+        return avenger.ability = "superhuman strength";
+    });
+    var sortedAvengerNames = _.sortBy(avengers_array, 'name')
+    var almostAvenger = {
+        name: "John Q. Public",
+        alias: "John Q"
+    };
+    _.defaults(almostAvenger, {
+        name: "need a real name",
+        alias: "need a superhero name",
+        abilities: "Need a superhero ability"
+    });
+    console.log(almostAvenger);
+    console.log(sortedAvengerNames);
+    console.log(superhumanStrengthAvengers);
+    console.log(superhumanStrengthAvenger);
+    console.log(superhumanStrengthAvengersArray);
+    console.log(avengerNames);
+    console.log(avengersAssemble);
+    </script>
+    <title>Underscore Test</title>
+</head>
+<body>
+    
+</body>
+</html>

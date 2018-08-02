@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./NodeJs/node_modules/underscore/underscore.js"></script>
+    <script>
+        var myState = {
+            name: "Washington",
+            capital: "Olympia",
+            population: 7062000,
+            nickname: "The Evergreen state"
+        };
+        var businesses = [
+            {
+                name: "Coding Dojo",
+                city: "Bellevue"
+            },
+            {
+                name: "Facebook",
+                city: "Mountain View"
+            },
+            {
+                name: "Microsoft",
+                city: "Redmond"
+            },
+            {
+                name: "Expedia",
+                city: "Bellevue"
+            }
+        ];
+        // // task 1
+        // var myStateKeys = _.keys(myState);
+        // var myStateValues = _.values(myState);
+        // console.log(myStateKeys,myStateValues);
+
+        // //task 2
+        // var myStateAssembled = _.object(myStateKeys,myStateValues);
+        // console.log(myStateAssembled);
+
+        // //task 3
+        // // var alerttest = _.each(myState,function(value){
+        // //     //return alert(value);
+        // // });
+
+        // // task 4
+        // var BusinessArray = _.map(businesses, function(business){
+        //     console.log(business);
+        //     return business["name"];
+        // })
+        // //console.log(BusinessArray);
+
+        // // task 5
+        // var MicrosoftBusiness = _.findWhere(businesses, {name: "Microsoft"});
+        // console.log(MicrosoftBusiness);
+
+        // task 6
+        var BellevueCompanies = _.filter(businesses, {city: "Bellevue"});
+        console.log(BellevueCompanies);
+
+        // task 7
+        var ordered = _.sortBy(businesses, 'city');
+        console.log(ordered);
+
+    </script>
+    <title>Document</title>
+
+</head>
+<body>
+    
+</body>
+</html>
