@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../NodeJs/node_modules/underscore/underscore.js"></script>
+    <script src="./backbone-min.js"></script>
+    <script>
+
+        var TravelTimeModel = Backbone.Model.extend({
+            defaults: {
+            }
+        });
+        var TravelTimeCollection = Backbone.Collection.extend({
+            model: TravelTimeModel,
+            url: "http://wsdot.com/Traffic/api/TravelTimes/TravelTimesREST.svc/GetTravelTimesAsJson?AccessCode=e901f9a2-936d-49fb-90a7-304f89fb5431"
+        });
+        var travelTimes = new TravelTimeCollection();
+        travelTimes.fetch().then(function(times){
+            console.log(times);
+            var CurrentTimeat0 = travelTimes.at(0);
+            console.log(CurrentTimeat0["attributes"]["CurrentTime"]);
+            var Alltimewith10 = travelTimes.where({CurrentTime: 10});
+            console.log(Alltimewith10);
+            return times;
+        });
+        console.log(travelTimes);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
